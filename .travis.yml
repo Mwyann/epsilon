@@ -7,10 +7,11 @@ addons:
     packages:
     - gcc-arm-embedded
     - libfltk1.3-dev
+    - emscripten
 
 matrix:
   include:
-    - env: PLATFORM=device EXT=elf
+    - env: PLATFORM=emscripten EXT=js TOOLCHAIN=emscripten
     - env: PLATFORM=simulator EXT=elf
     - env: PLATFORM=simulator EXT=elf TOOLCHAIN=host-clang
     - env: PLATFORM=blackbox EXT=bin QUIZ_USE_CONSOLE=1
